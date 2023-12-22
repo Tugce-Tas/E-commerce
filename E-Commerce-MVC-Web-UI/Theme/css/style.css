@@ -1,0 +1,81 @@
+:root {
+    --main-color: rgb(95, 158, 160);
+}
+
+body {
+    font-family: "Latoo", sans-serif;
+}
+
+.jumbotron {
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    height: 350px;
+}
+
+.product-detail-img {
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.product-detail-description{
+    padding-top: 20px;
+    height: 120px;
+}
+
+.product-detail-price{
+    font-size: 35px;
+    font-weight: bold;
+    padding-top: 4px;    
+    top:90px;
+    position:relative;
+}
+
+#product-details h1 {
+    font-size: 32px;
+    line-height:1.25em;
+    font-weight: 500;
+}
+
+.price-section{
+    width: 100%;
+    top:220px;
+    position:relative;
+}
+
+.btn-add-cart {
+    background-color: var(--main-color);
+    width: 100%;
+    color: aliceblue;
+    font-size: 22px;
+}
+
+.detail-information{
+    font-style: italic;
+    padding: 14px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.card-title {
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: 20px;
+    line-height:1.50em;
+}
+
+.card-text {
+    font-size: 16px;
+    line-height: 1.50em;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.50em;
+}
+
+.desc{
+    height:60px;
+
+}

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<E_Commerce_MVC_Web_UI.Entity.Category>
+@{
+    var selectedCategory = Url.RequestContext.RouteData.Values["id"];
+}
+
+
+<div class="list-group">
+
+    <a href="/Home/List" class="list-group-item list-group-item-action py-3" aria-current="true">
+        Tüm Kategoriler
+    </a>
+
+    @foreach (var item in Model)
+    {
+        if (selectedCategory != null)
+        {
+            if (item.Id == int.Parse(selectedCategory.ToString()))
+            {
+                <a href="/Home/List/@item.Id" class="list-group-item list-group-item-action py-3 active" aria-current="true">
+                    <i class="fa-solid fa-angle-right"></i>
+                    @item.Name
+                </a>
+            }
+            else
+            {
+                <a href="/Home/List/@item.Id" class="list-group-item list-group-item-action py-3 " aria-current="true">
+                    <i class="fa-solid fa-angle-right"></i>
+                    @item.Name
+                </a>
+            }
+        }
+        else
+        {
+            <a href="/Home/List/@item.Id" class="list-group-item list-group-item-action py-3 " aria-current="true">
+                <i class="fa-solid fa-angle-right"></i>
+                @item.Name
+            </a>
+        }
+    }
+
+</div>

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<E_Commerce_MVC_Web_UI.Entity.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container py-5">
+
+    <h2>Ürün Listesi</h2>
+    <p>
+        @Html.ActionLink("Ürün Ekle", "Create",null, new { @class = "btn btn-primary" })
+    </p>
+    <table  class="table table-border table-striped">
+        <tr class="text-center">
+            <th style="width:50px;">
+            </th>
+            <th class="text-start">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsApproved)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsHome)
+            </th>
+
+            <th style="width:140px;"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr class="text-center">
+                <td >
+                    <img src="~/Upload/@item.Image" width="100" height="100" />
+                </td>
+                <td style="width:400px;" class="pt-5 text-start">
+
+                    @Html.DisplayFor(modelItem => item.Name)
+                    
+                </td>
+                <td class="pt-5">
+                    @Html.DisplayFor(modelItem => item.Price) TL
+                </td>
+                <td class="pt-5">
+                    @Html.DisplayFor(modelItem => item.Stock)
+                </td>
+                <td class="pt-5">
+                    @if (item.IsApproved)
+                    {
+                        <i class="fa-solid fa-check text-success"></i>
+                    }
+                    else
+                    {
+                        <i class="fa-solid fa-xmark text-danger"></i>
+                    }
+                </td>
+                <td class="pt-5">
+                    @if (item.IsHome)
+                    {
+                        <i class="fa-solid fa-check text-success"></i>
+                    }
+                    else
+                    {
+                        <i class="fa-solid fa-xmark text-danger"></i>
+                    }
+                </td>
+
+                <td class="pt-5">
+                    @Html.ActionLink("Güncelle", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

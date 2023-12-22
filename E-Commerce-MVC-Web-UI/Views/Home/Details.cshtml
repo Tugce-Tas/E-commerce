@@ -1,0 +1,146 @@
+﻿@using E_Commerce_MVC_Web_UI.Entity;
+@model Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div id="product-details" class="container py-3">
+    <div class="row">
+
+
+        <!-- ******************product photo****************** -->
+        <div class="col-md-6">
+                <img src="~/Upload/@Model.Image" class="img-responsive product-detail-img">
+        </div>
+
+        <!-- ******************product information******************- -->
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@Model.Name</h1>
+                    @if(Model.IsApproved)
+                    {
+                    <span class="badge bg-success">Stokta var</span>
+                    } else
+                    {
+                    <span class="badge bg-secondary">Stokta yok</span>
+                    }
+                    <span class="product-number">#255645</span>
+                </div>
+                <div class="col-md-12 product-detail-description">
+                       @Model.Description
+                </div>
+
+                <hr class="mt-3">
+
+                <div class="col-md-6">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="badge text-bg-light" style="font-weight: lighter;">53 değerlendirme</i>
+                </div>
+                <div class="col-md-6">
+                    <p style="margin-left: -80px;">
+                        <a href="#">Yorum yaz...</a>
+                    </p>
+                </div>
+
+                <!-- ******************price and like****************** -->
+
+
+                <div class="col-md-12 product-detail-price">
+                    <h4 class="product-detail-price">@Model.Price TL</h4>
+                </div>
+
+                <div class="row price-section">
+                    <div class="col-md-11 p-1">
+                        <button class="btn btn-add-cart">
+                            <i class="fa-solid fa-cart-shopping m-0"></i>
+                            Sepete Ekle
+                        </button>
+                    </div>
+
+                    <div class="col-md-1 p-1">
+                        <button class="btn border border-3 rounded-2 h-100 ">
+                            <i class="fa-regular fa-heart  "></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ******************product detail information****************** -->
+    <div class="col-md-12">
+        <div class="bd-example m-0 border-0">
+            <ul class="nav nav-tabs mt-2">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-description-tab" data-toggle="pill"
+                       aria-controls="pills-description" aria-expanded="true" href="#pills-description"
+                       role="tab">Açıklama</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-comments-tab" data-toggle="pill" aria-controls="pills-comments"
+                       aria-expanded="true" href="#pills-comments" role="tab">Yorumlar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-payment-tab" data-toggle="pill" aria-controls="pills-payment"
+                       aria-expanded="true" href="#pills-payment" role="tab">Ödeme </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+                <div class="detail-information tab-pane fade show active" id="pills-description" role="tabpanel"
+                     aria-labelledby="pills-description-tab">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam repellendus velit, libero
+                        perferendis possimus maiores quod non animi laborum sunt reiciendis, nobis modi autem. Vero
+                        aut eveniet, harum nostrum fugit commodi atque quod minima hic modi laboriosam placeat
+                        asperiores nobis necessitatibus sed aspernatur ut vitae dolore accusantium deserunt laborum
+                        nihil blanditiis. Quas, sed aperiam quia ipsum autem provident repellat molestiae quasi
+                        maiores, quisquam, nam facilis laborum quis expedita ipsa fugiat vitae enim impedit
+                        repellendus qui blanditiis distinctio. Quod saepe recusandae esse reprehenderit, deleniti
+                        vero, minima cupiditate laborum ratione odit nisi aperiam natus harum accusantium impedit
+                        nemo quis, fugiat ex quidem!
+                </div>
+
+                <div class="detail-information tab-pane fade" id="pills-comments" role="tabpanel"
+                     aria-labelledby="pills-comments-tab">
+                    <p>
+                        Eveniet quos veniam harum soluta, culpa, magni mollitia dignissimos qui doloribus voluptatem
+                        vitae sapiente velit corporis ab earum hic? Maiores blanditiis quibusdam tempora non,
+                        ratione dolorem distinctio sequi, commodi deserunt sit aperiam assumenda sunt fugit nostrum
+                        suscipit? Harum iusto asperiores, dolores assumenda minus quas velit ex eligendi blanditiis
+                        enim veritatis quia nemo voluptas, possimus nostrum omnis distinctio. Sint expedita omnis
+                        libero quae quidem aperiam rem amet doloremque perferendis, ipsa dolore non sed, natus
+                        obcaecati dolorum tempore quod deleniti sit? Voluptate, natus ad in mollitia quaerat eaque
+                        atque animi impedit debitis odit ipsa id excepturi minima molestiae perferendis fugit ex
+                        magnam quos?
+                </div>
+
+                <div class="detail-information tab-pane fade" id="pills-payment" role="tabpanel"
+                     aria-labelledby="pills-payment-tab">
+                    <p>
+                        Eveniet officiis dolorem eaque quidem ratione officia eos reprehenderit molestias quos
+                        consequuntur! Temporius, dolores. Cupiditate aperiam tempora omnis maxime possimus earum eum
+                        beatae
+                        deserunt ullam at! Expbedita, impedit quae. Vitae, dolor earum cumque deleniti laboriosam,
+                        voluptatibus recusandae aliquid quaerat accusamus tenetur, eum architecto iure qui. Sed,
+                        dolorum!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

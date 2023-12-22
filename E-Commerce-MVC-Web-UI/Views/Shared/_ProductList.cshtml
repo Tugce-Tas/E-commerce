@@ -1,0 +1,31 @@
+﻿@using E_Commerce_MVC_Web_UI.Models;
+@model IEnumerable<ProductModel>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4 ">
+            <div class="card mb-5">
+                    <img src="/Upload/@product.Image" class="card-img-top" style="height:300px; object-fit:cover " alt="@product.Name">
+                <div class="card-body">
+                        <h5 style="height:60px;">
+                            <a class="card-title" href="/Home/Details/@product.Id">
+                                @product.Name
+                            </a>
+                        </h5>
+                        <p class="card-text py-1 desc">@product.Description</p>
+                </div>
+                <div class="card-footer">
+                    <small class="product-price">
+                        <i class="fa-solid fa-tags"></i>
+                        <span class="ps-1">@product.Price TL</span>
+                        <a class="btn btn-primary float-end" href="/Home/Details/@product.Id">
+                            <i class="fa-solid fa-angles-right"></i>
+                            Ürünü İncele
+                        </a>
+                    </small>
+                </div>
+            </div>
+         </div>
+    }
+</div>
