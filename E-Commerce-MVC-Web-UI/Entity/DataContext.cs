@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using E_Commerce_MVC_Web_UI.Identity;
 
 namespace E_Commerce_MVC_Web_UI.Entity
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext<ApplicationUser>
     {
         public DataContext() : base("dataConnection") 
         { 

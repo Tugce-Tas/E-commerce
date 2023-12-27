@@ -14,7 +14,7 @@ namespace E_Commerce_MVC_Web_UI.Entity
 
 
         [DisplayName("Kategori Adı")]
-        [StringLength(maximumLength:20, ErrorMessage =  "En fazla 20 karakter girebilirsiniz" )]
+        [StringLength(maximumLength: 20, ErrorMessage = "En fazla 20 karakter girebilirsiniz.")]
         public string Name { get; set; }
 
 
